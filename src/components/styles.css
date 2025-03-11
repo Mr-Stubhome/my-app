@@ -11,7 +11,7 @@ body {
 }
 
 .wrapper {
-  width: 290px;
+  width: fit-content;
   background-color: #303030;
   padding: 8px;
   border-radius: 8px;
@@ -21,7 +21,7 @@ body {
 }
 
 .wrapperNumbers {
-  width: 290px;
+  width: fit-content;
   background-color: #303030;
   padding: 8px;
   border-radius: 8px;
