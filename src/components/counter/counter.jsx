@@ -1,61 +1,51 @@
-import { Component } from "react";
+import { useState } from "react";
 import "../../components/styles.css";
 
-class Counter extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      count: 0,
-    };
-  }
+export function Counter({ countedNumber }) {
+  const [count, setCount] = useState(0);
 
-  increment = () => {
-    this.setState({ count: this.state.count + this.props.countedNumber });
+  const handleClickIncrement = () => {
+    setCount((prevCount) => prevCount + countedNumber);
   };
 
-  decrement = () => {
-    this.setState({ count: this.state.count - this.props.countedNumber });
+  const handleClickDecrement = () => {
+    setCount((prevCount) => prevCount - countedNumber);
   };
 
-  increase = () => {
-    this.setState({ count: this.state.count * this.props.countedNumber });
+  const handleClickIncrease = () => {
+    setCount((prevCount) => prevCount * countedNumber);
   };
 
-  divide = () => {
-    this.setState({ count: this.state.count / this.props.countedNumber });
+  const handleClickDivide = () => {
+    setCount((prevCount) => prevCount / countedNumber);
   };
 
-  reset = () => {
-    this.setState({ count: 0 });
+  const handleClickReset = () => {
+    setCount(0);
   };
 
-  render() {
-    console.log(this.props.countedNumber);
-    return (
-      <>
-        <div className="wrapper">
-          <h1>Счетчик: {this.state.count}</h1>
-          <div>
-            <button className="reset" onClick={this.increment}>
-              Прибавить
-            </button>
-            <button className="reset" onClick={this.decrement}>
-              Отнять
-            </button>
-            <button className="reset" onClick={this.increase}>
-              Умножить
-            </button>
-            <button className="reset" onClick={this.divide}>
-              Разделить
-            </button>
-            <button className="reset" onClick={this.reset}>
-              Сбросить
-            </button>
-          </div>
+  return (
+    <>
+      <div className="wrapper">
+        <h1>Счетчик: {count}</h1>
+        <div>
+          <button className="reset" onClick={handleClickIncrement}>
+            Прибавить
+          </button>
+          <button className="reset" onClick={handleClickDecrement}>
+            Отнять
+          </button>
+          <button className="reset" onClick={handleClickIncrease}>
+            Умножить
+          </button>
+          <button className="reset" onClick={handleClickDivide}>
+            Разделить
+          </button>
+          <button className="reset" onClick={handleClickReset}>
+            Сбросить
+          </button>
         </div>
-      </>
-    );
-  }
+      </div>
+    </>
+  );
 }
-
-export default Counter;

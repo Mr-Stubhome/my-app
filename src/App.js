@@ -1,6 +1,5 @@
 import { useState } from "react";
-import Counter from "./components/counter/counter";
-import Numbers from "./components/numbers/numbers";
+import { Numbers } from "./components/numbers/numbers";
 
 function App() {
   return (
